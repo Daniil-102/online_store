@@ -2,7 +2,7 @@
   "name": "type-script",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://daniil-102.github.io/online_store/",
+  "homepage": "https://daniil-102.github.io",
   "dependencies": {
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.0",
