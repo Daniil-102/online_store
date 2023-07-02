@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter as Router } from 'react-router-dom';
 
 import { Main } from './pages/Main';
 import { Shop } from './pages/Shop';
@@ -106,6 +106,7 @@ const App: React.FC = () => {
     <div className="wrapper">
       <Router>
         <Routes>
+
           <Route path="/" element={<Main minus={minusCount} plus={plusCount} goods={goods} cart={cart} setCart={setCart} cartSum={cartSum} setCartSum={setCartSum} />} />
           <Route path="/shop" element={<Shop minus={minusCount} plus={plusCount} goods={goods} cart={cart} setCart={setCart} cartSum={cartSum} setCartSum={setCartSum} />} />
           <Route path="/shop/:id" element={<Product minus={minusCount} plus={plusCount} goods={goods} cart={cart} setCart={setCart} cartSum={cartSum} setCartSum={setCartSum} />} />
