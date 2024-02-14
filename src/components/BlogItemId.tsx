@@ -34,7 +34,7 @@ interface Props {
     setCartSum: React.Dispatch<React.SetStateAction<number>>;
     articles: Iarticle[],
     minus: (id: number) => void,
-    plus: (id: number) => void,
+    plus: (id: number, n?: number) => void,
 }
 interface post {
     name: string,

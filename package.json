@@ -21,6 +21,7 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.7.3",
     "react-select-country-list": "^2.2.3",
+    "sonner": "^1.4.0",
     "swiper": "^9.4.0",
     "typescript": "^5.3.3"
   },

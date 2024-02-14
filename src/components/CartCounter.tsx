@@ -3,7 +3,7 @@ import c from './Header.module.scss';
 
 interface IProps {
     minus: (id: number) => void,
-    plus: (id: number) => void,
+    plus: (id: number, n?: number) => void,
     id: number,
     count: number
 }

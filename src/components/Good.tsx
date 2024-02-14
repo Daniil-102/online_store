@@ -42,7 +42,6 @@ export const Good: React.FC<IGoodProps> = ({ good, addToCart }) => {
 
     const handleClick = () => {
         addToCart(good);
-        console.log(good)
         if (good.sale) {
             toast.success(`${good.title} added to cart`)
         } else {

@@ -16,7 +16,7 @@ interface IProps {
     },
     deleteCart: (id: number) => void,
     minus: (id: number) => void,
-    plus: (id: number) => void,
+    plus: (id: number, n?: number) => void,
 }
 
 export const Cart: FC<IProps> = ({ cart, deleteCart, minus, plus }) => {

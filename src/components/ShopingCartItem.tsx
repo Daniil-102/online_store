@@ -14,7 +14,7 @@ interface Props {
         sale: boolean
     },
     minus: (id: number) => void,
-    plus: (id: number) => void,
+    plus: (id: number, n?: number) => void,
     deleteCart: (id: number) => void
 }
 

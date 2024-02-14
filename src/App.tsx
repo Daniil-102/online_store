@@ -1,4 +1,3 @@
-import { Toaster } from 'sonner'
 import React, { useEffect, useRef, useState } from 'react';
 import { Routes, Route, HashRouter as Router } from 'react-router-dom';
 
@@ -81,11 +80,11 @@ const App: React.FC = () => {
 
   }, [cart, setCartSum])
 
-  const plusCount = (id: number) => {
+  const plusCount = (id: number, n?: number) => {
     setCart(prev => {
       return prev.map(item => {
         if (item.id === id) {
-          return { ...item, count: item.count + 1 };
+          return { ...item, count: n ? n : item.count + 1 };
         }
         return item;
       });
@@ -105,7 +104,6 @@ const App: React.FC = () => {
 
   return (
     <div className="wrapper">
-      <Toaster position="top-right" />
 
       <Router>
         <Routes>

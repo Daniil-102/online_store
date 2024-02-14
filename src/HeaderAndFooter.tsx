@@ -10,7 +10,7 @@ interface ComponentProps {
     cartSum: number,
     totalSum: number,
     minus: (id: number) => void,
-    plus: (id: number) => void,
+    plus: (id: number, n?: number) => void,
 }
 interface IGoods {
     id: number;

@@ -18,7 +18,7 @@ interface Props {
     cartSum: number;
     setCartSum: React.Dispatch<React.SetStateAction<number>>;
     minus: (id: number) => void,
-    plus: (id: number) => void,
+    plus: (id: number, n?: number) => void,
 }
 
 export const Contact: React.FC<Props> = ({ cart, setCart, cartSum, setCartSum, minus, plus }) => {

@@ -31,7 +31,7 @@ interface Props {
         desc: string,
     }[],
     minus: (id: number) => void,
-    plus: (id: number) => void,
+    plus: (id: number, n?: number) => void,
 }
 
 export const Blog: React.FC<Props> = ({ cart, setCart, cartSum, setCartSum, articles, minus, plus }) => {

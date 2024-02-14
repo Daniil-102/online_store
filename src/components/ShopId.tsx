@@ -14,6 +14,7 @@ import star from './img/star.svg'
 import star1 from './img/star1.svg'
 import { Rev } from './Rev';
 import { Good } from './Good';
+import { toast } from 'sonner';
 
 interface IGoods {
     id: number;
@@ -31,7 +32,7 @@ interface Props {
     setCartSum: React.Dispatch<React.SetStateAction<number>>;
     goods: IGoods[],
     minus: (id: number) => void,
-    plus: (id: number) => void,
+    plus: (id: number, n?: number) => void,
 }
 
 export const Product: React.FC<Props> = ({ cart, setCart, cartSum, setCartSum, goods, minus, plus }) => {
@@ -122,7 +123,14 @@ export const Product: React.FC<Props> = ({ cart, setCart, cartSum, setCartSum, g
     const addToCart = (good: IGoods) => {
         if (!cart.find((item) => item.id === good.id) && good.sale) {
             setCart((prev) => [...prev, good]);
+        } else if (good.sale) {
+            toast.success(`${good.title} added to cart`)
+
         }
+        else {
+            toast.error(`This item is sold out`)
+        }
+        plus(good.id, count)
     };
     const deleteCart = (id: number) => {
         setCart(prev => prev.filter(item => item.id !== id));
@@ -173,7 +181,7 @@ export const Product: React.FC<Props> = ({ cart, setCart, cartSum, setCartSum, g
                                         <div className="good_counter">{count}</div>
                                         <button onClick={() => setCount(prev => prev + 1)} className="good_count-plus">+</button>
                                     </div>
-                                    <button onClick={() => addToCart(good)} className="adding-to-cart">ADD TO CART</button>
+                                    <button onClick={() => { addToCart(good) }} className="adding-to-cart">ADD TO CART</button>
                                 </div>
                                 <div className="good_social">
                                     <a href="#"><img src={email} alt="social" className="good_social-img" /></a>
